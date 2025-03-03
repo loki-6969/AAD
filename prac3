@@ -1,0 +1,62 @@
+Firstly, Add the Following Code To activity_main.xml File---------------------------
+
+
+<?xml version=“1.0” encoding=“utf-8”?> 
+<LinearLayout xmlns:android=“http://schemas.android.com/apk/res/android” 
+android:layout_width=“fill_parent” 
+android:layout_height=“fill_parent” 
+android:orientation=“vertical” 
+android:padding=“2dp”> 
+<ImageView 
+android:id=“@+id/imageView” 
+android:layout_width=“match_parent” 
+android:layout_height=“wrap_content” 
+android:layout_weight=“1” /> 
+<Button 
+android:id=“@+id/buttonLoadPicture” 
+android:layout_width=“wrap_content” 
+android:layout_height=“wrap_content” 
+android:layout_gravity=“center” 
+android:layout_weight=“0” 
+android:text=“Load Picture” /> 
+</LinearLayout> 
+Now Add the Following Code To MainActivity.kt File: - 
+package com.example.sycspractical3i 
+import android.content.Intent 
+import android.net.Uri 
+Page 15
+import android.os.Bundle 
+import android.provider.MediaStore 
+import android.support.v7.app.AppCompatActivity 
+import android.widget.Button 
+class MainActivity : AppCompatActivity()  
+{ 
+lateinit var imageView: ImageView 
+lateinit var button: Button 
+private val pickImage = 100 
+private var imageUri: Uri? = null 
+override fun onCreate(savedInstanceState: Bundle?)  
+{ 
+super.onCreate(savedInstanceState) 
+setContentView(R.layout.activity_main) 
+title = “KotlinApp” 
+imageView = findViewById(R.id.imageView) 
+button = findViewById(R.id.buttonLoadPicture) 
+button.setOnClickListener  
+{ 
+val gallery = Intent(Intent.ACTION_PICK, 
+MediaStore.Images.Media.INTERNAL_CONTENT_URI) 
+startActivityForResult(gallery, pickImage) 
+} 
+} 
+override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)  
+{ 
+super.onActivityResult(requestCode, resultCode, data) 
+if (resultCode == RESULT_OK && requestCode == pickImage)  
+{ 
+Page 16
+imageUri = data?.data 
+imageView.setImageURI(imageUri) 
+} 
+} 
+} 
