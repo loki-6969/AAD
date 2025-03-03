@@ -1,4 +1,6 @@
- A) If-else statement 
+PRAC 1 A)--------------------------------------------------------------------
+
+A) If-else statement---------
 fun main(args: Array<String>) { 
     var a = 5 
     var b = 10 
@@ -10,7 +12,7 @@ fun main(args: Array<String>) {
     } 
 } 
 
-B) For Loop 
+B) For Loop ------------
 fun main(args: Array<String>) { 
 var numbers = arrayOf(1,2,3,4,5,6,7,8,9,10) 
 for (num in numbers){ 
@@ -18,14 +20,14 @@ if(num%2 == 0){
 print("$num ") 
 }}}
 
-C) while 
+C) while ---------------
 fun main(args: Array<String>) { 
 var number = 1 
 while(number <= 10) { 
 println(number) 
 number++;  }} 
 
-D) do-while 
+D) do-while --------------
 fun main(args: Array<String>) { 
 var number = 6 
 var factorial = 1 
@@ -36,7 +38,7 @@ number--
 println("Factorial of 6 is $factorial") 
 } 
 
-E) when  
+E) when  ------------
 fun main (args : Array<String>) { 
 print("Enter the name of heavenly body: ") 
 var name= readLine()!!.toString() 
@@ -46,4 +48,42 @@ when(name) {
 "Earth" -> print("Earth is a planet") 
 } 
 } 
+
+PRAC 1 B)---------------------------------------------------------------------
+
+A) Class and Object ----------
+class num { 
+// data member 
+private var number: Int = 5 
+// member function 
+fun calculateSquare(): Int { 
+return number*number 
+} 
+} 
+fun main(args: Array<String>) { 
+}  
+val obj = num() 
+println("${obj.calculateSquare()}") 
+
+B) INHERITANCE-----------
+
+
+open class Student(name: String, rollno: Int, stream: String) 
+{ 
+init { 
+println("Name is $name.") 
+println("Roll No is $rollno") 
+println("Student of $stream") 
+} 
+} 
+class Programmer(name: String, rollno: Int, stream: 
+String):Student(name,rollno,stream){ 
+fun doProgram() { 
+println("I'm Learning Kotlin Programming") 
+} 
+} 
+fun main(args: Array<String>){ 
+val obj1 = Programmer("ABC", 5,  "CS") 
+obj1.doProgram()  } 
+
 
