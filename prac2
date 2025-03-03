@@ -1,5 +1,4 @@
- 
-CODE 
+Q1)----------- 
 MainActivity.kt (Kotlin file) 
 package com.example.p2f  //P2F stands for  file name.  
 import androidx.appcompat.app.AppCompatActivity   //By default 
@@ -7,13 +6,12 @@ import android.os.Bundle
 import android.view.View 
 import android.widget.* 
 import androidx.core.view.get 
-class MainActivity : AppCompatActivity() { 
-//onCreate is the default method that is automatically generated 
+class MainActivity : AppCompatActivity() {  
 override fun onCreate(savedInstanceState: Bundle?) { 
 super.onCreate(savedInstanceState) 
-setContentView(R.layout.activity_main)  
- 
-   val Name = findViewById<EditText>(R.id.name) 
+setContentView(R.layout.activity_main) 
+
+val Name = findViewById<EditText>(R.id.name) 
    val submitButton= findViewById<Button>(R.id.button) 
    val dispMessage = findViewById<TextView>(R.id.textViewResponse) 
    val radioGroup= findViewById<RadioGroup>(R.id.selectgender) 
@@ -24,21 +22,15 @@ setContentView(R.layout.activity_main)
    val CodingLang = findViewById<TextView>(R.id.language) 
    val Universityyear= findViewById<Spinner>(R.id.spinner) 
    val myclass = findViewById<TextView>(R.id.myclass) 
-   val year=arrayOf("FYCS","SYCS","TYCS") // Dropdown list items for Spinner
- 
-   val arrayAdp = ArrayAdapter( 
+   val year=arrayOf("FYCS","SYCS","TYCS")
+  val arrayAdp = ArrayAdapter( 
 this,android.R.layout.simple_spinner_dropdown_item,year) //Simple dropdown 
 layout selected for the spinner list 
    Universityyear.adapter= arrayAdp 
    Universityyear.onItemSelectedListener= object : 
-AdapterView.OnItemSelectedListener { 
- 
-Page 9
- 
-       override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: 
-Int, p3: Long) { 
- 
-// To Display the Array class for the selected position. 
+AdapterView.OnItemSelectedListener {
+ override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: 
+Int, p3: Long) {  
            myclass.text= "Your Class: " + year[position]  
        } 
  
@@ -56,12 +48,8 @@ button (male) is chosen, its text will be displayed.*/
         } 
  
         submitButton.setOnClickListener{ 
-        dispMessage.setText("Welcome "+ Name.text)  //"Welcome" will appear 
-along with the entered name. 
- 
-        //Putting all checkbox conditions 
- 
-        if(CheckB1.isChecked && CheckB2.isChecked){ 
+        dispMessage.setText("Welcome "+ Name.text) 
+if(CheckB1.isChecked && CheckB2.isChecked){ 
             CodingLang.text= "You love both languages" } 
         else if(CheckB1.isChecked){ 
            CodingLang.text= "You love Python" } 
@@ -71,14 +59,14 @@ along with the entered name.
             CodingLang.text= "You don't like these languages" } 
         } 
  
-        }} 
- 
-Page 10
- 
-XML Code (activity_main) 
-As you design your UI, this xml code is automatically generated. Only the 
-Layout format  needs to be changed here. (Constraint, Absolute, or Linear 
-layout) 
+        }}
+
+
+Q2)---------------------------
+
+
+XML Code (activity_main) -------
+
 <Button 
 android:id="@+id/button" 
 android:layout_width="wrap_content" 
