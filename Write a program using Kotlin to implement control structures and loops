@@ -49,7 +49,7 @@ when(name) {
 } 
 } 
 
-PRAC 1 B)---------------------------------------------------------------------
+PRAC 1 B)-Write a program to implement object-oriented concepts in Kotlin.------------------
 
 A) Class and Object ----------
 class num { 
