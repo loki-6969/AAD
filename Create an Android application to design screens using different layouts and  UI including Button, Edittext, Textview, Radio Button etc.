@@ -1,4 +1,6 @@
-Q1)----------- 
+Q1)Create an Android application to design screens using different layouts and 
+UI including Button, Edittext, Textview, Radio Button etc.
+
 MainActivity.kt (Kotlin file) 
 package com.example.p2f  //P2F stands for  file name.  
 import androidx.appcompat.app.AppCompatActivity   //By default 
@@ -62,7 +64,12 @@ if(CheckB1.isChecked && CheckB2.isChecked){
         }}
 
 
-Q2)---------------------------
+Q2)Write an android application demonstrating response to event/user 
+interaction for 
+a. Checkbox 
+b. Radio button 
+c. Button 
+d. Spinner
 
 
 XML Code (activity_main) -------
